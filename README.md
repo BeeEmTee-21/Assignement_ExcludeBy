@@ -72,3 +72,57 @@ The `source` parameter represents the original list of values that will be check
 
 The `comparison` parameter represents the list of values that will be compared against the `source` list. Any value from `source` that is not found in `comparison` is treated as a non-matching value.
 
+
+## Limitations
+
+The current implementation has the following limitations:
+
+- It supports exact matching only.
+- Matching is case-sensitive.
+- The function is currently designed to work with lists.
+
+## Future Improvements
+
+The current implementation provides a simple foundation for comparing two lists using exact matching. Future versions of the utility are intended to make the comparison process more flexible and reusable.
+
+Planned improvements include:
+
+- Allowing users to define their own comparison rules.
+- Supporting case-insensitive matching.
+- Supporting partial or substring matching.
+- Allowing users to decide whether matching or non-matching values should be returned.
+- Expanding support beyond lists to other iterable data structures.
+- Adding built-in comparison strategies for common use cases.
+- Improving error handling for invalid inputs or comparison rules.
+- Adding automated tests to verify expected behavior.
+- Packaging the utility as a reusable Python library that can be imported into other projects.
+
+## Installation / Setup
+
+The utility can be used by placing the Python file containing the `exclude_by` function in the same project directory as the file where it will be used.
+
+The function can then be imported with:
+
+```python
+from collection_comparison_utility import exclude_by
+```
+
+It can also be imported with an alias:
+
+```python
+from collection_comparison_utility import exclude_by as eb
+```
+
+No external Python libraries are required for the current implementation.
+
+## What I Learned
+
+While building this project, I learned that modifying a list while iterating through it can lead to unexpected results because the structure of the list changes during the loop.
+
+I also learned that creating a new list for the result is a safer approach because it allows the original source data to remain unchanged.
+
+This project also helped me understand how the `in` and `not in` operators can be used to check whether values are present in a collection.
+
+Another important lesson was the value of writing reusable functions. By using generic parameters such as `source` and `comparison`, the function is not limited to only names and can be reused with different kinds of list data.
+
+Finally, the project introduced me to the idea of designing software for future expansion. Although the current implementation uses exact matching, future versions can allow users to provide their own comparison rules and decide how values should be considered a match.
