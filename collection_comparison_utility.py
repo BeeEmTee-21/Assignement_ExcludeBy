@@ -1,4 +1,4 @@
-def compare(source, comparison):
+def exclude_by(source, comparison):
     new_list = []
     for item in source:
         if item not in comparison:
